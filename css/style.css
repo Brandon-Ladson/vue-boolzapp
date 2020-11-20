@@ -4,3 +4,95 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* regole container app */
+#app{
+  height: 100vh;
+  padding: 20px 10%;
+  /* debug */
+  background-color: red;
+}
+
+/* regole macro container */
+.macro-container{
+  display: flex;
+  background-color: lightblue;
+  height: 100%;
+}
+
+/* regole menu chat */
+.menu-chat{
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+  width: 350px;
+  height: 100%;
+}
+
+/* regole contenitore barra utente */
+.menu-chat .user-content{
+  display: flex;
+  background-color: green;
+  min-height: 80px;
+  width: 100%;
+}
+
+/* regole contenitore barra notifiche */
+.menu-chat .notifications-content{
+  background-color: lightgreen;
+  min-height: 80px;
+  width: 100%;
+}
+
+/* regole contenitore barra di ricerca */
+.menu-chat .search-content{
+  background-color: blue;
+  min-height: 80px;
+  width: 100%;
+}
+
+/* regole contenitore chat aperte */
+.menu-chat .open-chat-content{
+  display: flex;
+  background-color: lightblue;
+  height: 300px;
+  width: 100%;
+}
+
+/* regole container chat */
+.chat-container{
+  position: relative;
+  background-color: orange;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  /* padding: 140px 0; */
+}
+
+/* regole top chat content */
+.chat-container .top-chat-content{
+  display: flex;
+  position: absolute;
+  top: 0;
+  background-color: black;
+  height: 80px;
+  width: 100%;
+}
+
+/* regole central chat content */
+/* .chat-container .central-chat-content{
+  background-color: lightgrey;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+} */
+
+/* regole bottom chat content */
+.chat-container .bottom-chat-content{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  background-color: grey;
+  height: 80px;
+  width: 100%;
+}
