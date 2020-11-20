@@ -34,20 +34,37 @@ img{
   display: flex;
   flex-direction: column;
   background-color: yellow;
-  width: 350px;
+  width: 500px;
   height: 100%;
 }
 
 /* regole contenitore barra utente */
 .menu-chat .user-content{
   display: flex;
+  justify-content: space-between;
   background-color: green;
   min-height: 80px;
   width: 100%;
 }
 
+/* regole left content*/
+.menu-chat .user-content .left-content{
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+/* regole left content*/
+.menu-chat .user-content .right-content{
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
 /* regole contenitore barra notifiche */
 .menu-chat .notifications-content{
+  display: flex;
+  align-items: center;
   background-color: lightgreen;
   min-height: 80px;
   width: 100%;
@@ -55,6 +72,8 @@ img{
 
 /* regole contenitore barra di ricerca */
 .menu-chat .search-content{
+  display: flex;
+  align-items: center;
   background-color: blue;
   min-height: 80px;
   width: 100%;
@@ -63,9 +82,33 @@ img{
 /* regole contenitore chat aperte */
 .menu-chat .open-chat-content{
   display: flex;
+  flex-direction: column;
   background-color: lightblue;
   height: 300px;
   width: 100%;
+}
+
+/* regole profile chat content */
+.menu-chat .open-chat-content .profile-chat-content{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #cecece;
+  border: 1px solid black;
+}
+
+/* regole left content*/
+.menu-chat .open-chat-content .profile-chat-content .left-content{
+  display: flex;
+  align-items: center;
+  background-color: grey;
+}
+
+/* regole right content*/
+.menu-chat .open-chat-content .profile-chat-content .right-content{
+  display: flex;
+  align-items: center;
+  background-color: grey;
 }
 
 /* regole container chat */
@@ -89,9 +132,15 @@ img{
   width: 100%;
 }
 
-/* regole left content e right content*/
+/* regole left content*/
+.chat-container .top-chat-content .left-content{
+  display: flex;
+  align-items: center;
+  background-color: yellow;
+}
 
-.chat-container .top-chat-content .left-content, .right-content{
+/* regole right content*/
+.chat-container .top-chat-content .right-content{
   display: flex;
   align-items: center;
   background-color: yellow;
