@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: sans-serif;
+}
+
+img{
+  width: 60px;
+  height: auto;
+}
+
 /* regole container app */
 #app{
   height: 100vh;
@@ -66,17 +75,26 @@
   height: 100%;
   width: 100%;
   overflow: auto;
-  /* padding: 140px 0; */
+  padding: 130px 0;
 }
 
 /* regole top chat content */
 .chat-container .top-chat-content{
   display: flex;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   background-color: black;
   height: 80px;
   width: 100%;
+}
+
+/* regole left content e right content*/
+
+.chat-container .top-chat-content .left-content, .right-content{
+  display: flex;
+  align-items: center;
+  background-color: yellow;
 }
 
 /* regole central chat content */
@@ -87,9 +105,33 @@
   overflow: auto;
 } */
 
+/* regole messaggio utente */
+.chat-container .user-message{
+  display: flex;
+  justify-content: flex-end;
+  background-color: purple;
+  height: 70px;
+  width: 100%;
+}
+
+/* regole messaggio amico */
+.chat-container .friend-message{
+  display: flex;
+  background-color: pink;
+  height: 70px;
+  width: 100%;
+}
+
+/* regole testo messaggio */
+.chat-container .text-message{
+  background-color: salmon;
+}
+
 /* regole bottom chat content */
 .chat-container .bottom-chat-content{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
   bottom: 0;
   background-color: grey;
