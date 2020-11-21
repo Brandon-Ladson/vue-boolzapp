@@ -19,12 +19,16 @@ i{
   font-size: 25px;
 }
 
+i:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 /* regole container app */
 #app{
   height: 100vh;
   padding: 20px 10%;
-  /* debug */
-  background-color: red;
+  background: linear-gradient(to bottom, #009988 18%, #dcdbd0 0%);
 }
 
 /* regole macro container */
@@ -39,7 +43,7 @@ i{
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  width: 600px;
+  width: 500px;
   height: 100%;
 }
 
@@ -145,6 +149,11 @@ i{
   border-bottom: 1px solid #f5f5f5;
 }
 
+.menu-chat .open-chat-content .profile-chat-content:hover{
+  background-color: #e9ebeb;
+  cursor: pointer;
+}
+
 /* regole left content*/
 .menu-chat .open-chat-content .profile-chat-content .left-content{
   display: flex;
@@ -173,9 +182,9 @@ i{
   flex-grow: 1;
   position: relative;
   background-image: url("../img/mine.jpg");
-  /* height: 100%; */
   overflow: auto;
   padding: 130px 0;
+  border-left: 1px solid #d6d6d6;
 }
 
 /* regole top chat content */
@@ -184,23 +193,31 @@ i{
   justify-content: space-between;
   position: fixed;
   top: 20px;
-  background-color: black;
+  background-color: #eaeaea;
   height: 80px;
-  width: calc(100% - 600px - 20%);
+  width: calc(100% - 500px - 20%);
+  padding: 0 20px 0 10px;
 }
 
 /* regole left content*/
 .chat-container .top-chat-content .left-content{
   display: flex;
   align-items: center;
-  background-color: yellow;
+}
+
+.chat-container .top-chat-content .left-content img{
+  margin-right: 5px;
 }
 
 /* regole right content*/
 .chat-container .top-chat-content .right-content{
   display: flex;
   align-items: center;
-  background-color: yellow;
+}
+
+.chat-container .top-chat-content .right-content i{
+  margin-left: 20px;
+  color: #b1b1b1;
 }
 
 /* regole central chat content */
@@ -215,22 +232,48 @@ i{
 .chat-container .user-message{
   display: flex;
   justify-content: flex-end;
-  background-color: purple;
-  height: 70px;
   width: 100%;
+  padding-right: 60px;
+  margin-bottom: 10px;
+}
+
+.chat-container .user-message .text-message{
+  background-color: #cbfbb3;
+  text-align: right;
+  min-width: 290px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.chat-container .user-message .text-message .text{
+  text-align: left;
+}
+
+.chat-container .user-message .text-message .data-ora{
+  color: #b5b9bb;
 }
 
 /* regole messaggio amico */
 .chat-container .friend-message{
   display: flex;
-  background-color: pink;
-  height: 70px;
   width: 100%;
+  padding-left: 60px;
 }
 
-/* regole testo messaggio */
-.chat-container .text-message{
-  background-color: salmon;
+.chat-container .friend-message .text-message{
+  background-color: #fff;
+  text-align: right;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 290px;
+}
+
+.chat-container .friend-message .text-message .text{
+  text-align: left;
+}
+
+.chat-container .friend-message .text-message .data-ora{
+  color: #b5b9bb;
 }
 
 /* regole bottom chat content */
@@ -240,7 +283,19 @@ i{
   align-items: center;
   position: fixed;
   bottom: 20px;
-  background-color: grey;
+  background-color: #f4eee9;
   height: 80px;
-  width: calc(100% - 600px - 20%);
+  width: calc(100% - 500px - 20%);
+}
+
+.chat-container .bottom-chat-content i{
+  margin: 0 20px 0 20px;
+  color: #697376;
+}
+
+.chat-container .bottom-chat-content input{
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
 }
