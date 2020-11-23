@@ -150,8 +150,12 @@ i:hover{
 }
 
 #large-menu .open-chat-content .profile-chat-content:hover{
-  background-color: #e9ebeb;
   cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.active{
+  background-color: #e9ebeb;
 }
 
 /* regole left content*/
@@ -249,8 +253,8 @@ i:hover{
 }
 
 #small-menu .open-chat-content .profile-chat-content:hover{
-  background-color: #e9ebeb;
   cursor: pointer;
+  background-color: #f5f5f5;
 }
 
 /* regole container chat */

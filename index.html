@@ -85,19 +85,19 @@
           <div class="open-chat-content">
 
             <!-- chat per profilo -->
-            <div class="profile-chat-content">
+            <div class="profile-chat-content" v-for="(amico, index) in contatti" :class="(index === indiceProfilo ? 'active' : '')" @click="selezioneProfilo(index)">
 
               <!-- contenuto sinistro -->
               <div class="left-content">
 
                 <!-- foto amico -->
-                <img src="img/avatar_1.jpg" alt="">
+                <img :src="amico.fotoAmico" alt="">
 
                 <!-- info chat -->
                 <div class="info-profile-chat">
 
                   <div class="friend-name">
-                    Michele
+                    {{amico.nome}}
                   </div>
 
                   <div class="ultimo-messaggio">
@@ -114,114 +114,6 @@
                 <!-- data e ora -->
                 <div class="data-ora">
                   20 11 2020 10:52:03
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- chat per profilo -->
-            <div class="profile-chat-content">
-
-              <!-- contenuto sinistro -->
-              <div class="left-content">
-
-                <!-- foto amico -->
-                <img src="img/avatar_2.jpg" alt="">
-
-                <!-- info chat -->
-                <div class="info-profile-chat">
-
-                  <div class="friend-name">
-                    Fabio
-                  </div>
-
-                  <div class="ultimo-messaggio">
-                    ok ...
-                  </div>
-
-                </div>
-
-              </div>
-
-              <!-- contenuto destro -->
-              <div class="right-content">
-
-                <!-- data e ora -->
-                <div class="data-ora">
-                  20 11 2020 10:56:00
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- chat per profilo -->
-            <div class="profile-chat-content">
-
-              <!-- contenuto sinistro -->
-              <div class="left-content">
-
-                <!-- foto amico -->
-                <img src="img/avatar_3.jpg" alt="">
-
-                <!-- info chat -->
-                <div class="info-profile-chat">
-
-                  <div class="friend-name">
-                    Samuele
-                  </div>
-
-                  <div class="ultimo-messaggio">
-                    ok ...
-                  </div>
-
-                </div>
-
-              </div>
-
-              <!-- contenuto destro -->
-              <div class="right-content">
-
-                <!-- data e ora -->
-                <div class="data-ora">
-                  20 11 2020 10:58:49
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- chat per profilo -->
-            <div class="profile-chat-content">
-
-              <!-- contenuto sinistro -->
-              <div class="left-content">
-
-                <!-- foto amico -->
-                <img src="img/avatar_4.jpg" alt="">
-
-                <!-- info chat -->
-                <div class="info-profile-chat">
-
-                  <div class="friend-name">
-                    Luisa
-                  </div>
-
-                  <div class="ultimo-messaggio">
-                    ok ...
-                  </div>
-
-                </div>
-
-              </div>
-
-              <!-- contenuto destro -->
-              <div class="right-content">
-
-                <!-- data e ora -->
-                <div class="data-ora">
-                  20 11 2020 12:01:32
                 </div>
 
               </div>
@@ -266,34 +158,10 @@
           <div class="open-chat-content">
 
             <!-- chat per profilo -->
-            <div class="profile-chat-content">
+            <div class="profile-chat-content" v-for="(amico, index) in contatti" :class="(index === indiceProfilo ? 'active' : '')" @click="selezioneProfilo(index)">
 
               <!-- foto amico -->
-              <img src="img/avatar_1.jpg" alt="">
-
-            </div>
-
-            <!-- chat per profilo -->
-            <div class="profile-chat-content">
-
-              <!-- foto amico -->
-              <img src="img/avatar_2.jpg" alt="">
-
-            </div>
-
-            <!-- chat per profilo -->
-            <div class="profile-chat-content">
-
-              <!-- foto amico -->
-              <img src="img/avatar_3.jpg" alt="">
-
-            </div>
-
-            <!-- chat per profilo -->
-            <div class="profile-chat-content">
-
-              <!-- foto amico -->
-              <img src="img/avatar_4.jpg" alt="">
+              <img :src="amico.fotoAmico" alt="">
 
             </div>
 
@@ -311,17 +179,17 @@
             <div class="left-content">
 
               <!-- foto amico -->
-              <img src="img/avatar_4.jpg" alt="">
+              <img :src="contatti[indiceProfilo].fotoAmico" alt="">
 
               <!-- info chat -->
               <div class="info-chat">
 
                 <div class="friend-name">
-                  Luisa
+                  {{contatti[indiceProfilo].nome}}
                 </div>
 
                 <div class="ultimo-accesso">
-                  Ultimo accesso oggi alle 20 11 2020 12:01:32
+                  Ultimo accesso oggi alle {{contatti[indiceProfilo].messaggi[indiceProfilo].dataOra}}
                 </div>
 
               </div>
@@ -344,7 +212,8 @@
           <!-- parte centrale -->
           <div class="central-chat-content">
 
-            <div class="text-message" v-for="(msg, i) in contatti[indiceProfilo].messaggi" :class="msg.tipo === 'inviato' ? 'user' : 'friend'">
+            <div class="text-message" v-for="(msg, index) in contatti[indiceProfilo].messaggi" :class="(msg.tipo === 'inviato' ? 'user' : 'friend')">
+
               <!-- testo -->
               <div class="text">
                 {{msg.messaggio}}
@@ -354,6 +223,7 @@
               <div class="data-ora">
                 {{msg.dataOra}}
               </div>
+
             </div>
 
           </div>

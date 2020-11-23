@@ -12,6 +12,7 @@ var app = new Vue ({
 
       {
         nome: 'Michele',
+        fotoAmico: 'img/avatar_1.jpg',
         messaggi: [
           {
             messaggio: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -42,6 +43,7 @@ var app = new Vue ({
       },
       {
         nome: 'Fabio',
+        fotoAmico: 'img/avatar_2.jpg',
         messaggi: [
           {
             messaggio: 'Ciao',
@@ -72,6 +74,7 @@ var app = new Vue ({
       },
       {
         nome: 'Samuele',
+        fotoAmico: 'img/avatar_3.jpg',
         messaggi: [
           {
             messaggio: 'Hai fatto i compiti?',
@@ -102,6 +105,7 @@ var app = new Vue ({
       },
       {
         nome: 'Luisa',
+        fotoAmico: 'img/avatar_4.jpg',
         messaggi: [
           {
             messaggio: 'Auguri!!!',
