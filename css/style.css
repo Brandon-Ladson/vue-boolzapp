@@ -313,6 +313,7 @@ i:hover{
   height: 100%;
   width: 100%;
   margin: 80px 0 80px 0;
+  padding: 0 40px 0 40px;
   overflow: auto;
 }
 
@@ -320,61 +321,36 @@ i:hover{
   margin-top: 40px;
 }
 
-/* regole messaggio utente */
-.chat-container .user-message{
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  padding-right: 60px;
+/* regole messaggio*/
+.chat-container .text-message{
   margin-bottom: 10px;
+  max-width: 600px;
 }
 
-.chat-container .user-message .text-message{
+.chat-container .text-message .text{
+  text-align: left;
+}
+
+.chat-container .text-message .data-ora{
+  color: #b5b9bb;
+}
+
+/* regole messaggio utente */
+.chat-container .text-message.user{
   background-color: #cbfbb3;
   text-align: right;
   min-width: 290px;
   padding: 10px;
   border-radius: 10px;
-
-  /* max-width: 600px;
-  display: inline-block;
-  margin-left: calc(100% - 40% - 80px); */
-}
-
-.chat-container .user-message .text-message .text{
-  text-align: left;
-}
-
-.chat-container .user-message .text-message .data-ora{
-  color: #b5b9bb;
 }
 
 /* regole messaggio amico */
-.chat-container .friend-message{
-  display: flex;
-  width: 100%;
-  padding-left: 60px;
-  margin-bottom: 10px;
-}
-
-.chat-container .friend-message .text-message{
+.chat-container .text-message.friend{
   background-color: #fff;
   text-align: right;
   padding: 10px;
   border-radius: 10px;
   min-width: 290px;
-
-  /* max-width: 600px;
-  display: inline-block;
-  margin-left: 40px; */
-}
-
-.chat-container .friend-message .text-message .text{
-  text-align: left;
-}
-
-.chat-container .friend-message .text-message .data-ora{
-  color: #b5b9bb;
 }
 
 /* regole bottom chat content */
@@ -424,5 +400,5 @@ i:hover{
   /* regole top chat content */
   /* .chat-container .top-chat-content{
     width: calc(100% - 20% - 80px);
-  }
-} */
+  } */
+}
