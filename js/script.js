@@ -146,8 +146,7 @@ var app = new Vue ({
       this.indiceProfilo = index;
     },
 
-    inviaMessaggio: function (messaggioScritto) {
-
+    inviaMessaggio: function () {
       var time = new Date();
       var anno = time.getFullYear();
       var mese = time.getMonth();
@@ -164,6 +163,16 @@ var app = new Vue ({
         }
       );
 
+      var risp = '';
+
+      if (this.messaggioScritto === 'ciao') {
+        risp = 'Ciao anche a te';
+      } else if (this.messaggioScritto === 'come stai?') {
+        risp = 'Bene. Tu come stai?';
+      } else {
+        risp = 'ok';
+      }
+
       this.messaggioScritto = '';
 
       setTimeout (() => {
@@ -178,7 +187,7 @@ var app = new Vue ({
 
         this.contatti[this.indiceProfilo].messaggi.push(
           {
-            messaggio: 'ok',
+            messaggio: risp,
             dataOra: giorno + "/" + mese + "/" + anno + " " + ora + ":" + minuti + ":" + secondi,
             tipo: 'ricevuto'
           }
