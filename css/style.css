@@ -265,10 +265,6 @@ i:hover{
   position: relative;
   background-image: url("../img/mine.jpg");
   border-left: 1px solid #d6d6d6;
-
-  /* height: 100%;
-  overflow: auto;
-  padding-top: 100px; */
 }
 
 /* regole top chat content */
@@ -281,10 +277,6 @@ i:hover{
   height: 80px;
   background-color: #eaeaea;
   padding: 0 20px 0 10px;
-
-  /* position: fixed;
-  top: 20px;
-  width: calc(100% - 20% - 500px); */
 }
 
 /* regole left content*/
@@ -366,10 +358,6 @@ i:hover{
   width: 100%;
   height: 80px;
   background-color: #f4eee9;
-
-  /* position: fixed;
-  bottom: 20px;
-  width: calc(100% - 20% - 500px); */
 }
 
 .chat-container .bottom-chat-content i{
@@ -387,21 +375,13 @@ i:hover{
 /* regole versione tablet e smartphone */
 @media all and (max-width: 1300px){
 
+  /* REGOLE MENU GRANDE */
   #large-menu{
     display: none;
   }
 
+  /* REGOLE MENU PICCOLO */
   #small-menu{
     display: flex;
   }
-
-  /* regole bottom chat content */
-  /* .chat-container .bottom-chat-content{
-    width: calc(100% - 20% - 80px);
-  } */
-
-  /* regole top chat content */
-  /* .chat-container .top-chat-content{
-    width: calc(100% - 20% - 80px);
-  } */
 }

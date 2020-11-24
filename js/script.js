@@ -147,6 +147,8 @@ var app = new Vue ({
     },
 
     inviaMessaggio: function () {
+
+      // creo delle variabili per ricavare la data e l'ora al momento dell'invio del messaggio dell'utente
       var time = new Date();
       var anno = time.getFullYear();
       var mese = time.getMonth();
@@ -155,6 +157,7 @@ var app = new Vue ({
       var minuti = time.getMinutes();
       var secondi = time.getSeconds();
 
+      // faccio il push di un nuovo oggetto nell'array contatti selezionato
       this.contatti[this.indiceProfilo].messaggi.push(
         {
           messaggio: this.messaggioScritto,
@@ -163,6 +166,7 @@ var app = new Vue ({
         }
       );
 
+      // dichiaro una variabile risposta con una stringa vuota che cambierà in base a cosa ha scritto l'utente
       var risp = '';
 
       if (this.messaggioScritto === 'ciao') {
@@ -173,10 +177,13 @@ var app = new Vue ({
         risp = 'ok';
       }
 
+      // riporto il valore di messaggioScritto a stringa vuota
       this.messaggioScritto = '';
 
+      // setto quanto tempo dopo l'invio del messaggio utente parte quello automatico
       setTimeout (() => {
 
+        // risetto i dati di ora e data a quelli dell'messaggio automatico
         time = new Date();
         anno = time.getFullYear();
         mese = time.getMonth();
@@ -185,6 +192,7 @@ var app = new Vue ({
         minuti = time.getMinutes();
         secondi = time.getSeconds();
 
+        // faccio il push di un nuovo oggetto nell'array contatti selezionato
         this.contatti[this.indiceProfilo].messaggi.push(
           {
             messaggio: risp,
@@ -192,7 +200,9 @@ var app = new Vue ({
             tipo: 'ricevuto'
           }
         );
+
       }, 1000);
+
     }
 
   }
