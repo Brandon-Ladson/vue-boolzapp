@@ -8,6 +8,7 @@ var app = new Vue ({
   data: {
 
     indiceProfilo: 0,
+    messaggioScritto: '',
     contatti: [
 
       {
@@ -140,9 +141,51 @@ var app = new Vue ({
 
   },
   methods: {
+
     selezioneProfilo: function(index) {
       this.indiceProfilo = index;
+    },
+
+    inviaMessaggio: function (messaggioScritto) {
+
+      var time = new Date();
+      var anno = time.getFullYear();
+      var mese = time.getMonth();
+      var giorno = time.getDate();
+      var ora = time.getHours();
+      var minuti = time.getMinutes();
+      var secondi = time.getSeconds();
+
+      this.contatti[this.indiceProfilo].messaggi.push(
+        {
+          messaggio: this.messaggioScritto,
+          dataOra: giorno + "/" + mese + "/" + anno + " " + ora + ":" + minuti + ":" + secondi,
+          tipo: 'inviato'
+        }
+      );
+
+      this.messaggioScritto = '';
+
+      setTimeout (() => {
+
+        time = new Date();
+        anno = time.getFullYear();
+        mese = time.getMonth();
+        giorno = time.getDate();
+        ora = time.getHours();
+        minuti = time.getMinutes();
+        secondi = time.getSeconds();
+
+        this.contatti[this.indiceProfilo].messaggi.push(
+          {
+            messaggio: 'ok',
+            dataOra: giorno + "/" + mese + "/" + anno + " " + ora + ":" + minuti + ":" + secondi,
+            tipo: 'ricevuto'
+          }
+        );
+      }, 1000);
     }
+
   }
 
 })

@@ -234,9 +234,9 @@
 
             <i class="far fa-smile"></i>
 
-            <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+            <input type="text" v-model="messaggioScritto" placeholder="Scrivi un messaggio">
 
-            <i class="fas fa-microphone"></i>
+            <i class="fas fa-microphone" @click="inviaMessaggio"></i>
 
           </div>
 
