@@ -328,7 +328,7 @@ i:hover{
 /* regole messaggio*/
 .chat-container .text-message{
   margin-bottom: 10px;
-  max-width: 600px;
+  max-width: 400px;
 }
 
 .chat-container .text-message .text{
@@ -340,21 +340,20 @@ i:hover{
 }
 
 /* regole messaggio utente */
-.chat-container .text-message.user{
+.chat-container .text-message.inviato{
   background-color: #cbfbb3;
   text-align: right;
-  min-width: 290px;
   padding: 10px;
   border-radius: 10px;
+  margin-left: auto;
 }
 
 /* regole messaggio amico */
-.chat-container .text-message.friend{
+.chat-container .text-message.ricevuto{
   background-color: #fff;
   text-align: right;
   padding: 10px;
   border-radius: 10px;
-  min-width: 290px;
 }
 
 /* regole bottom chat content */

@@ -101,7 +101,7 @@
                   </div>
 
                   <div class="ultimo-messaggio">
-                    ok ...
+                    {{contatti[index].messaggi[contatti[index].messaggi.length - 1].messaggio}}
                   </div>
 
                 </div>
@@ -113,7 +113,8 @@
 
                 <!-- data e ora -->
                 <div class="data-ora">
-                  20 11 2020 10:52:03
+                  <!-- 20 11 2020 10:52:03 -->
+                  {{contatti[index].messaggi[contatti[index].messaggi.length - 1].dataOra}}
                 </div>
 
               </div>
@@ -189,7 +190,7 @@
                 </div>
 
                 <div class="ultimo-accesso">
-                  Ultimo accesso oggi alle {{contatti[indiceProfilo].messaggi[indiceProfilo].dataOra}}
+                  Ultimo accesso oggi alle {{contatti[indiceProfilo].messaggi[contatti[indiceProfilo].messaggi.length - 1].dataOra}}
                 </div>
 
               </div>
@@ -212,16 +213,16 @@
           <!-- parte centrale -->
           <div class="central-chat-content">
 
-            <div class="text-message" v-for="(msg, index) in contatti[indiceProfilo].messaggi" :class="(msg.tipo === 'inviato' ? 'user' : 'friend')">
+            <div class="text-message" v-for="item in contatti[indiceProfilo].messaggi" :class="item.tipo">
 
               <!-- testo -->
               <div class="text">
-                {{msg.messaggio}}
+                {{item.messaggio}}
               </div>
 
               <!-- data e ora -->
               <div class="data-ora">
-                {{msg.dataOra}}
+                {{item.dataOra}}
               </div>
 
             </div>

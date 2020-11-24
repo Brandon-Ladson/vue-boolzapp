@@ -36,7 +36,7 @@ var app = new Vue ({
           },
           {
             messaggio: 'Verso le 20:30',
-            dataOra: '20/11/2020 12:01:32',
+            dataOra: '20/11/2020 12:05:32',
             tipo: 'ricevuto'
           }
         ]
@@ -47,27 +47,27 @@ var app = new Vue ({
         messaggi: [
           {
             messaggio: 'Ciao',
-            dataOra: '10/01/2020 15:30:55',
+            dataOra: '10/01/2020 14:20:55',
             tipo: 'inviato'
           },
           {
             messaggio: 'Come stai?',
-            dataOra: '10/01/2020 15:50:00',
+            dataOra: '10/01/2020 15:01:00',
             tipo: 'inviato'
           },
           {
             messaggio: 'Si tira avanti',
-            dataOra: '20/11/2020 10:52:02',
+            dataOra: '20/11/2020 15:03:02',
             tipo: 'ricevuto'
           },
           {
             messaggio: 'Tu come stai?',
-            dataOra: '20/11/2020 12:01:31',
+            dataOra: '20/11/2020 16:01:31',
             tipo: 'ricevuto'
           },
           {
             messaggio: 'Tutto bene',
-            dataOra: '20/11/2020 12:01:32',
+            dataOra: '20/11/2020 16:55:32',
             tipo: 'inviato'
           }
         ]
@@ -78,12 +78,12 @@ var app = new Vue ({
         messaggi: [
           {
             messaggio: 'Hai fatto i compiti?',
-            dataOra: '10/01/2020 15:30:55',
+            dataOra: '10/01/2020 10:30:55',
             tipo: 'inviato'
           },
           {
             messaggio: 'Non ancora',
-            dataOra: '10/01/2020 15:50:00',
+            dataOra: '10/01/2020 10:40:00',
             tipo: 'ricevuto'
           },
           {
@@ -93,12 +93,12 @@ var app = new Vue ({
           },
           {
             messaggio: 'Perchè?',
-            dataOra: '20/11/2020 12:01:31',
+            dataOra: '20/11/2020 11:01:31',
             tipo: 'ricevuto'
           },
           {
             messaggio: 'Perchè questa sera usciamo',
-            dataOra: '20/11/2020 12:01:32',
+            dataOra: '20/11/2020 12:11:32',
             tipo: 'inviato'
           }
         ]
@@ -109,27 +109,27 @@ var app = new Vue ({
         messaggi: [
           {
             messaggio: 'Auguri!!!',
-            dataOra: '10/01/2020 15:30:55',
+            dataOra: '10/01/2020 09:33:55',
             tipo: 'inviato'
           },
           {
             messaggio: 'Grazie!!!',
-            dataOra: '10/01/2020 15:50:00',
+            dataOra: '10/01/2020 09:34:00',
             tipo: 'ricevuto'
           },
           {
             messaggio: 'Cosa fai per festeggiare?',
-            dataOra: '20/11/2020 10:52:02',
+            dataOra: '20/11/2020 10:06:02',
             tipo: 'inviato'
           },
           {
             messaggio: 'Vado al ristorante?',
-            dataOra: '20/11/2020 12:01:31',
+            dataOra: '20/11/2020 10:08:31',
             tipo: 'ricevuto'
           },
           {
             messaggio: 'Vuoi venire anche tu?',
-            dataOra: '20/11/2020 12:01:32',
+            dataOra: '20/11/2020 10:44:32',
             tipo: 'ricevuto'
           }
         ]
