@@ -263,7 +263,7 @@ i:hover{
 }
 
 .invisibile {
-  display: block;
+  display: none;
 }
 
 /* regole container chat */

@@ -194,7 +194,7 @@ var app = new Vue ({
     // prova
     ricercaChat: function () {
 
-      if (this.contatti[this.indiceProfilo].nome.includes(this.ricercaContatto)) {
+      if (this.contatti.nome.includes(this.ricercaContatto)) {
         this.statoChat = 'visibile';
       } else {
         this.statoChat = 'invisibile';
