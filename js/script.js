@@ -152,10 +152,25 @@ var app = new Vue ({
       var time = new Date();
       var anno = time.getFullYear();
       var mese = time.getMonth();
+      if (mese < 10) {
+        mese = '0' + mese;
+      }
       var giorno = time.getDate();
+      if (giorno < 10) {
+        giorno = '0' + giorno;
+      }
       var ora = time.getHours();
+      if (ora < 10) {
+        ora = '0' + ora;
+      }
       var minuti = time.getMinutes();
+      if (minuti < 10) {
+        minuti = '0' + minuti;
+      }
       var secondi = time.getSeconds();
+      if (secondi < 10) {
+        secondi = '0' + secondi;
+      }
 
       // faccio il push di un nuovo oggetto nell'array contatti selezionato
       this.contatti[this.indiceProfilo].messaggi.push(
@@ -187,10 +202,25 @@ var app = new Vue ({
         time = new Date();
         anno = time.getFullYear();
         mese = time.getMonth();
+        if (mese < 10) {
+          mese = '0' + mese;
+        }
         giorno = time.getDate();
+        if (giorno < 10) {
+          giorno = '0' + giorno;
+        }
         ora = time.getHours();
+        if (ora < 10) {
+          ora = '0' + ora;
+        }
         minuti = time.getMinutes();
+        if (minuti < 10) {
+          minuti = '0' + minuti;
+        }
         secondi = time.getSeconds();
+        if (secondi < 10) {
+          secondi = '0' + secondi;
+        }
 
         // faccio il push di un nuovo oggetto nell'array contatti selezionato
         this.contatti[this.indiceProfilo].messaggi.push(

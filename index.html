@@ -233,7 +233,7 @@
 
             <i class="far fa-smile"></i>
 
-            <input type="text" v-model="messaggioScritto" placeholder="Scrivi un messaggio">
+            <input type="text" v-model="messaggioScritto" v-on:keydown.enter="inviaMessaggio" placeholder="Scrivi un messaggio">
 
             <i class="fas fa-paper-plane" @click="inviaMessaggio"></i>
 
