@@ -9,15 +9,13 @@ var app = new Vue ({
 
     indiceProfilo: 0,
     messaggioScritto: '',
-    // Prova
     ricercaContatto: '',
-    statoChat: 'visibile',
-    // fine prova
     contatti: [
 
       {
         nome: 'Michele',
         fotoAmico: 'img/avatar_1.jpg',
+        visibile: true,
         messaggi: [
           {
             messaggio: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -49,6 +47,7 @@ var app = new Vue ({
       {
         nome: 'Fabio',
         fotoAmico: 'img/avatar_2.jpg',
+        visibile: true,
         messaggi: [
           {
             messaggio: 'Ciao',
@@ -80,6 +79,7 @@ var app = new Vue ({
       {
         nome: 'Samuele',
         fotoAmico: 'img/avatar_3.jpg',
+        visibile: true,
         messaggi: [
           {
             messaggio: 'Hai fatto i compiti?',
@@ -111,6 +111,7 @@ var app = new Vue ({
       {
         nome: 'Luisa',
         fotoAmico: 'img/avatar_4.jpg',
+        visibile: true,
         messaggi: [
           {
             messaggio: 'Auguri!!!',
@@ -146,10 +147,12 @@ var app = new Vue ({
   },
   methods: {
 
+    // funzione per selezionare la chat su cui scrivere
     selezioneProfilo: function(index) {
       this.indiceProfilo = index;
     },
 
+    // funzione per inviare il messaggio dell'utente e per generare risposta automatica
     inviaMessaggio: function () {
 
       // faccio il push di un nuovo oggetto nell'array contatti selezionato
@@ -191,18 +194,23 @@ var app = new Vue ({
 
     },
 
-    // prova
+    // funzione per filtrare la chat desiderata
     ricercaChat: function () {
 
-      if (this.contatti.nome.includes(this.ricercaContatto)) {
-        this.statoChat = 'visibile';
-      } else {
-        this.statoChat = 'invisibile';
-      }
+      this.contatti.forEach((item) => {
+
+        if (item.nome.includes(this.ricercaContatto)) {
+          item.visibile = true;
+
+        } else {
+          item.visibile = false;
+        }
+
+      });
 
     },
-    // fine prova
 
+    // funzione per generare data e ora reali delle chat
     generatoreDataOra: function () {
 
       // creo delle variabili per ricavare la data e l'ora al momento dell'invio del messaggio
