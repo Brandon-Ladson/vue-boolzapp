@@ -148,35 +148,11 @@ var app = new Vue ({
 
     inviaMessaggio: function () {
 
-      // creo delle variabili per ricavare la data e l'ora al momento dell'invio del messaggio dell'utente
-      var time = new Date();
-      var anno = time.getFullYear();
-      var mese = time.getMonth();
-      if (mese < 10) {
-        mese = '0' + mese;
-      }
-      var giorno = time.getDate();
-      if (giorno < 10) {
-        giorno = '0' + giorno;
-      }
-      var ora = time.getHours();
-      if (ora < 10) {
-        ora = '0' + ora;
-      }
-      var minuti = time.getMinutes();
-      if (minuti < 10) {
-        minuti = '0' + minuti;
-      }
-      var secondi = time.getSeconds();
-      if (secondi < 10) {
-        secondi = '0' + secondi;
-      }
-
       // faccio il push di un nuovo oggetto nell'array contatti selezionato
       this.contatti[this.indiceProfilo].messaggi.push(
         {
           messaggio: this.messaggioScritto,
-          dataOra: giorno + "/" + mese + "/" + anno + " " + ora + ":" + minuti + ":" + secondi,
+          dataOra: this.generatoreDataOra(),
           tipo: 'inviato'
         }
       );
@@ -198,41 +174,60 @@ var app = new Vue ({
       // setto quanto tempo dopo l'invio del messaggio utente parte quello automatico
       setTimeout (() => {
 
-        // risetto i dati di ora e data a quelli dell'messaggio automatico
-        time = new Date();
-        anno = time.getFullYear();
-        mese = time.getMonth();
-        if (mese < 10) {
-          mese = '0' + mese;
-        }
-        giorno = time.getDate();
-        if (giorno < 10) {
-          giorno = '0' + giorno;
-        }
-        ora = time.getHours();
-        if (ora < 10) {
-          ora = '0' + ora;
-        }
-        minuti = time.getMinutes();
-        if (minuti < 10) {
-          minuti = '0' + minuti;
-        }
-        secondi = time.getSeconds();
-        if (secondi < 10) {
-          secondi = '0' + secondi;
-        }
-
         // faccio il push di un nuovo oggetto nell'array contatti selezionato
         this.contatti[this.indiceProfilo].messaggi.push(
           {
             messaggio: risp,
-            dataOra: giorno + "/" + mese + "/" + anno + " " + ora + ":" + minuti + ":" + secondi,
+            dataOra: this.generatoreDataOra(),
             tipo: 'ricevuto'
           }
         );
 
       }, 1000);
 
+    },
+
+    generatoreDataOra: function () {
+
+      // creo delle variabili per ricavare la data e l'ora al momento dell'invio del messaggio
+      var time = new Date();
+
+      // anno
+      var anno = time.getFullYear();
+
+      // mesi
+      var mese = time.getMonth();
+      if (mese < 10) {
+        mese = '0' + mese;
+      }
+
+      // giorni
+      var giorno = time.getDate();
+      if (giorno < 10) {
+        giorno = '0' + giorno;
+      }
+
+      // ore
+      var ora = time.getHours();
+      if (ora < 10) {
+        ora = '0' + ora;
+      }
+
+      // minuti
+      var minuti = time.getMinutes();
+      if (minuti < 10) {
+        minuti = '0' + minuti;
+      }
+
+      // secondi
+      var secondi = time.getSeconds();
+      if (secondi < 10) {
+        secondi = '0' + secondi;
+      }
+
+      // ritorno il risultato
+      return giorno + "/" + mese + "/" + anno + " " + ora + ":" + minuti + ":" + secondi;
+      
     }
 
   }
