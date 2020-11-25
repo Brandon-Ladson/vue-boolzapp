@@ -73,9 +73,9 @@
             <!-- search bar -->
             <div class="search-bar">
 
-              <i class="fas fa-search"></i>
+              <i class="fas fa-search" @click="ricercaChat"></i>
 
-              <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+              <input v-model="ricercaContatto" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
 
             </div>
 
@@ -85,7 +85,7 @@
           <div class="open-chat-content">
 
             <!-- chat per profilo -->
-            <div class="profile-chat-content" v-for="(amico, index) in contatti" :class="(index === indiceProfilo ? 'active' : '')" @click="selezioneProfilo(index)">
+            <div :class="statoChat" class="profile-chat-content" v-for="(amico, index) in contatti"  :class="(index === indiceProfilo ? 'active' : '')" @click="selezioneProfilo(index)">
 
               <!-- contenuto sinistro -->
               <div class="left-content">

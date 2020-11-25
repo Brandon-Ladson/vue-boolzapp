@@ -9,6 +9,10 @@ var app = new Vue ({
 
     indiceProfilo: 0,
     messaggioScritto: '',
+    // Prova
+    ricercaContatto: '',
+    statoChat: 'visibile',
+    // fine prova
     contatti: [
 
       {
@@ -187,6 +191,18 @@ var app = new Vue ({
 
     },
 
+    // prova
+    ricercaChat: function () {
+
+      if (this.contatti[this.indiceProfilo].nome.includes(this.ricercaContatto)) {
+        this.statoChat = 'visibile';
+      } else {
+        this.statoChat = 'invisibile';
+      }
+
+    },
+    // fine prova
+
     generatoreDataOra: function () {
 
       // creo delle variabili per ricavare la data e l'ora al momento dell'invio del messaggio
@@ -227,7 +243,7 @@ var app = new Vue ({
 
       // ritorno il risultato
       return giorno + "/" + mese + "/" + anno + " " + ora + ":" + minuti + ":" + secondi;
-      
+
     }
 
   }

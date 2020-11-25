@@ -257,6 +257,15 @@ i:hover{
   background-color: #f5f5f5;
 }
 
+/* classi visibile e invisibile */
+.visibile {
+  display: block;
+}
+
+.invisibile {
+  display: block;
+}
+
 /* regole container chat */
 .chat-container{
   display: flex;
