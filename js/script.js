@@ -167,9 +167,9 @@ var app = new Vue ({
       // dichiaro una variabile risposta con una stringa vuota che cambierà in base a cosa ha scritto l'utente
       var risp = '';
 
-      if (this.messaggioScritto === 'ciao') {
+      if (this.messaggioScritto.toLowerCase() === 'ciao') {
         risp = 'Ciao anche a te';
-      } else if (this.messaggioScritto === 'come stai?') {
+      } else if (this.messaggioScritto.toLowerCase() === 'come stai?') {
         risp = 'Bene. Tu come stai?';
       } else {
         risp = 'ok';
@@ -199,7 +199,7 @@ var app = new Vue ({
 
       this.contatti.forEach((item) => {
 
-        if (item.nome.includes(this.ricercaContatto)) {
+        if (item.nome.toLowerCase().includes(this.ricercaContatto.toLowerCase())) {
           item.visibile = true;
 
         } else {
