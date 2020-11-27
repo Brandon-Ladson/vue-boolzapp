@@ -319,33 +319,32 @@ i:hover{
 
 /* regole messaggio*/
 .chat-container .text-message{
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
   margin-bottom: 10px;
   max-width: 400px;
 }
 
 .chat-container .text-message .text{
   text-align: left;
+  word-wrap: break-word;
 }
 
 .chat-container .text-message .data-ora{
   color: #b5b9bb;
+  text-align: right;
 }
 
 /* regole messaggio utente */
 .chat-container .text-message.inviato{
   background-color: #cbfbb3;
-  text-align: right;
-  padding: 10px;
-  border-radius: 10px;
   margin-left: auto;
 }
 
 /* regole messaggio amico */
 .chat-container .text-message.ricevuto{
   background-color: #fff;
-  text-align: right;
-  padding: 10px;
-  border-radius: 10px;
 }
 
 /* regole bottom chat content */
