@@ -220,7 +220,7 @@ var app = new Vue ({
       var anno = time.getFullYear();
 
       // mesi
-      var mese = time.getMonth();
+      var mese = time.getMonth() + 1;
       if (mese < 10) {
         mese = '0' + mese;
       }
