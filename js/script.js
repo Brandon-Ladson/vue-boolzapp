@@ -151,12 +151,13 @@ var app = new Vue ({
     selezioneProfilo: function(index) {
       this.indiceProfilo = index;
     },
-    
+
     // funzione per inviare il messaggio dell'utente e per generare risposta automatica
     inviaMessaggio: function () {
 
       // controllo per pushare solo se l'utente ha scritto qualcosa nell'input
       if (this.messaggioScritto != '') {
+
         // faccio il push di un nuovo oggetto nell'array contatti selezionato
         this.contatti[this.indiceProfilo].messaggi.push(
           {
@@ -165,21 +166,7 @@ var app = new Vue ({
             tipo: 'inviato'
           }
         );
-      }
 
-      // dichiaro una variabile risposta con una stringa vuota che cambierà in base a cosa ha scritto l'utente
-      var risp = '';
-
-      if (this.messaggioScritto.toLowerCase() === 'ciao') {
-        risp = 'Ciao anche a te';
-      } else if (this.messaggioScritto.toLowerCase() === 'come stai?') {
-        risp = 'Bene. Tu come stai?';
-      } else {
-        risp = 'ok';
-      }
-
-      // controllo per pushare solo se l'utente ha scritto qualcosa nell'input
-      if (this.messaggioScritto != '') {
         // setto quanto tempo dopo l'invio del messaggio utente parte quello automatico
         setTimeout (() => {
           // faccio il push di un nuovo oggetto nell'array contatti selezionato
@@ -191,6 +178,18 @@ var app = new Vue ({
             }
           );
         }, 1000);
+
+      }
+
+      // dichiaro una variabile risposta con una stringa vuota che cambierà in base a cosa ha scritto l'utente
+      var risp = '';
+
+      if (this.messaggioScritto.toLowerCase() === 'ciao') {
+        risp = 'Ciao anche a te';
+      } else if (this.messaggioScritto.toLowerCase() === 'come stai?') {
+        risp = 'Bene. Tu come stai?';
+      } else {
+        risp = 'ok';
       }
 
       // riporto il valore di messaggioScritto a stringa vuota
