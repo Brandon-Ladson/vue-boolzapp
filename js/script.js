@@ -151,18 +151,21 @@ var app = new Vue ({
     selezioneProfilo: function(index) {
       this.indiceProfilo = index;
     },
-
+    
     // funzione per inviare il messaggio dell'utente e per generare risposta automatica
     inviaMessaggio: function () {
 
-      // faccio il push di un nuovo oggetto nell'array contatti selezionato
-      this.contatti[this.indiceProfilo].messaggi.push(
-        {
-          messaggio: this.messaggioScritto,
-          dataOra: this.generatoreDataOra(),
-          tipo: 'inviato'
-        }
-      );
+      // controllo per pushare solo se l'utente ha scritto qualcosa nell'input
+      if (this.messaggioScritto != '') {
+        // faccio il push di un nuovo oggetto nell'array contatti selezionato
+        this.contatti[this.indiceProfilo].messaggi.push(
+          {
+            messaggio: this.messaggioScritto,
+            dataOra: this.generatoreDataOra(),
+            tipo: 'inviato'
+          }
+        );
+      }
 
       // dichiaro una variabile risposta con una stringa vuota che cambierà in base a cosa ha scritto l'utente
       var risp = '';
@@ -175,22 +178,23 @@ var app = new Vue ({
         risp = 'ok';
       }
 
+      // controllo per pushare solo se l'utente ha scritto qualcosa nell'input
+      if (this.messaggioScritto != '') {
+        // setto quanto tempo dopo l'invio del messaggio utente parte quello automatico
+        setTimeout (() => {
+          // faccio il push di un nuovo oggetto nell'array contatti selezionato
+          this.contatti[this.indiceProfilo].messaggi.push(
+            {
+              messaggio: risp,
+              dataOra: this.generatoreDataOra(),
+              tipo: 'ricevuto'
+            }
+          );
+        }, 1000);
+      }
+
       // riporto il valore di messaggioScritto a stringa vuota
       this.messaggioScritto = '';
-
-      // setto quanto tempo dopo l'invio del messaggio utente parte quello automatico
-      setTimeout (() => {
-
-        // faccio il push di un nuovo oggetto nell'array contatti selezionato
-        this.contatti[this.indiceProfilo].messaggi.push(
-          {
-            messaggio: risp,
-            dataOra: this.generatoreDataOra(),
-            tipo: 'ricevuto'
-          }
-        );
-
-      }, 1000);
 
     },
 
